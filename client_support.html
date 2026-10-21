@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="support">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item active" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <h1 class="center" style="margin-bottom:40px">Help & Support</h1>
+    <div class="mid stack">
+      <div class="card"><h2><i class="fa-solid fa-user"></i> Client Profile</h2><p class="mb">You can view your Client Profile by clicking your picture located at the top of the navigation bar.</p>
+        <p>Before making an appointment, please complete and edit your profile with the following details:</p>
+        <ul style="margin:8px 0 0 36px;color:#374151;line-height:1.7"><li>Birthday</li><li>Age</li><li>Gender</li><li>Contact Number</li><li>Email Address</li><li>Address</li><li>Profile Picture</li></ul></div>
+      <div class="card"><h2><i class="fa-solid fa-calendar-check"></i> Appointment</h2><ul style="list-style:none;color:#374151;line-height:1.7" class="stack">
+        <li>• When you enter the appointment page, you will immediately be able to select a service. However, you may also browse the services first if you wish. Once you have chosen the service you want to book, simply click on it, and you will be directed straight to the appointment form.</li>
+        <li>• On the appointment page, you will clearly see which dates are already taken, dates that are unavailable, and dates that are open for booking. Simply click on an available date to proceed.</li>
+        <li>• After selecting a date, you will be shown a summary of your booking including the service, date, and your personal information. Double-check everything and click Submit Appointment when you're ready.</li>
+        <li>• Once submitted, your appointment will be marked as Pending. Please wait for approval from our team. You can check the status of your appointments anytime on your Schedule page.</li></ul></div>
+      <div class="card"><h2><i class="fa-solid fa-circle-question"></i> Frequently Asked Questions</h2><div class="stack">
+        <details><summary>Can I cancel my appointment?</summary><p class="muted" style="margin-top:8px">Yes — you can cancel your appointment as long as it is still in Pending status. Go to your Schedule page, find your appointment, and click the Cancel button.</p></details>
+        <details><summary>How will I know if my appointment is approved?</summary><p class="muted" style="margin-top:8px">You can check the status anytime on your Schedule page. You will also receive a notification at your registered email address once your appointment has been reviewed.</p></details>
+        <details><summary>What should I do if I need to reschedule?</summary><p class="muted" style="margin-top:8px">If your appointment has already been approved, please contact us through the Contact page or send us a message, and we will assist you with rescheduling. You may also cancel your pending appointment and book a new one.</p></details>
+        <details><summary>Why is it important to complete my profile?</summary><p class="muted" style="margin-top:8px">Your profile information helps us serve you better. Your details will be included automatically every time you book an appointment, so keeping them up to date ensures everything goes smoothly.</p></details></div></div>
+      <div class="card center"><h3 style="font-size:22px;font-weight:600;margin-bottom:12px">Need More Help?</h3><p class="muted mb">If you have any other questions or concerns, please don't hesitate to reach out to us.</p>
+        <a class="btn btn-black" href="client_contact.html">Contact Us</a></div></div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

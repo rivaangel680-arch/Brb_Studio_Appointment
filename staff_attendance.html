@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="attendance">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by staff.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='staff_profile.html'">
+        <img id="sidePic" src="" alt="Staff Profile">
+        <div><b id="sideName">Staff</b><span>STAFF</span></div>
+      </div>
+      <a class="nav-item" href="staff_dashboard.html"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+      <a class="nav-item" href="staff_clients.html"><i class="fa-solid fa-users"></i><span>Client Management</span></a>
+      <a class="nav-item" href="staff_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="staff_appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointment & Booking</span></a>
+      <a class="nav-item active" href="staff_attendance.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+      <a class="nav-item" href="staff_reports.html"><i class="fa-solid fa-star"></i><span>Report</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="row between mb"><h1 style="margin:0">Client Attendance</h1>
+      <div class="row"><input type="date" id="dateFilter"><input data-filter placeholder="Search client..."></div></div>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+    <div id="markSection" hidden><h2 id="markTitle"></h2><div class="card mb"><div class="stack" id="markList"></div></div></div>
+    <h2>Attendance Records</h2><div id="list"></div>
+  </main>
+
+  <script src="staff.js"></script>
+</body>
+</html>

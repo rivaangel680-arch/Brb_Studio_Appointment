@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="profile">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile active" onclick="document.getElementById('profileCard').classList.toggle('flipped')">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+    <div class="flip-card" id="profileCard" onclick="this.classList.toggle('flipped')"><div class="flip-inner">
+      <div class="face front"><a class="edit" href="client_edit_profile.html" onclick="event.stopPropagation()">Edit</a><img id="pPic" alt="Profile Photo">
+        <div class="who"><div class="u" id="pUser"></div><div class="f" id="pFull"></div></div><div class="bar"><span>BRB</span></div></div>
+      <div class="face back"><div class="b">BRB</div><p id="bBday"></p><p id="bAge"></p><p id="bGender"></p><p id="bPhone"></p><p id="bEmail"></p><p id="bAddr"></p></div></div></div>
+    <div class="mid"><h2 class="center mb">Appointment History</h2>
+      <div class="row mb" style="flex-wrap:nowrap"><input class="full" data-filter placeholder="Search by service or date..." style="padding:12px 20px"></div>
+      <div class="stack" id="list"></div></div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

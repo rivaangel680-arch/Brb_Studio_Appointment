@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="calendar">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item active" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <h1 class="center">Calendar of Appointments</h1>
+    <div class="legend"><span><i class="sw" style="background:#fef3c7;border-color:#facc15"></i>Has Appointment</span><span><i class="sw" style="background:#e5e5e5"></i>Unavailable</span></div>
+    <div class="row between mid mb"><button class="btn btn-black" data-act="prev"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+      <select id="monthSelect"></select><button class="btn btn-black" data-act="next">Next <i class="fa-solid fa-chevron-right"></i></button></div>
+    <div class="card mid"><div class="cal7" style="margin-bottom:8px"><div class="h">SUN</div><div class="h">MON</div><div class="h">TUE</div><div class="h">WED</div><div class="h">THU</div><div class="h">FRI</div><div class="h">SAT</div></div>
+      <div class="cal7" id="calendarGrid"></div></div>
+    <div id="modal" class="modal"><div class="card"><h3 id="modalDate" style="font-size:22px;font-weight:bold;margin-bottom:14px"></h3><div id="modalContent"></div>
+      <button class="btn btn-black full" style="margin-top:20px" data-act="close-modal">Close</button></div></div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

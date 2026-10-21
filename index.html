@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — BRB Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="glass-card">
+        <div class="logo">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.Ed_-92iYdFv2iqe7_T-zyQHaHa?pid=Api&h=220&P=0" alt="BRB Logo">
+            <h1>BRB STUDIO</h1>
+            <p>Easy Booking • Track Sessions • Excellence</p>
+        </div>
+
+        <div id="errorMessage" class="error hidden"></div>
+        <div id="successMessage" class="success hidden"></div>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <form id="loginFormElement" method="POST" action="login_handler.php">
+                <label>Username or Email</label>
+                <input type="text" name="username" class="input" placeholder="Enter your username" required>
+
+                <label>Password</label>
+                <input type="password" name="password" class="input" placeholder="Enter your password" required>
+
+                <button type="submit" name="login" class="btn btn-black">Sign In</button>
+            </form>
+            <p class="link" id="showRegisterLink">Don't have an account? <strong>Create Account</strong></p>
+        </div>
+
+        <!-- Register Form -->
+        <div id="regForm" class="hidden">
+            <form id="regFormElement" method="POST" action="login_handler.php">
+                <label>First Name</label>
+                <input type="text" name="first_name" class="input" placeholder="Enter your first name" required>
+
+                <label>Last Name</label>
+                <input type="text" name="last_name" class="input" placeholder="Enter your last name" required>
+
+                <label>Email Address</label>
+                <input type="email" name="email" class="input" placeholder="Enter your Email" required>
+
+                <label>Username</label>
+                <input type="text" name="username" class="input" placeholder="Create a username" required>
+
+                <label>Password</label>
+                <input type="password" name="password" class="input" placeholder="8+ characters, uppercase, lowercase, number" required>
+
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" class="input" placeholder="Re-enter your password" required>
+
+                <button type="submit" name="register" class="btn btn-black">Create Account</button>
+            </form>
+            <p class="link" id="showLoginLink">Back to Login</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>BRB since 2020</span>
+        <span>Made by students of CCGC</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

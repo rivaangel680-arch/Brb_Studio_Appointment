@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="appointment">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item active" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="two-col">
+      <div class="stack">
+        <div class="center"><img id="svcImg" alt="" style="width:100%;height:320px;object-fit:cover;margin-bottom:20px">
+          <h3 id="svcName" style="font-size:28px;font-weight:normal;letter-spacing:.05em;margin-bottom:10px"></h3>
+          <p style="font-size:22px;margin-bottom:14px" id="svcPrice"></p><div class="brand-mark">BRB</div></div>
+        <div id="myInfo" style="line-height:1.9"></div>
+        <p class="muted small"><a style="text-decoration:underline" href="client_edit_profile.html">Edit your profile</a> to update this information</p>
+        <hr><a id="backLink" style="text-decoration:underline" href="client_services.html">← Change Service</a>
+      </div>
+      <div class="stack">
+        <div class="card err" id="errBox" hidden></div>
+        <div class="card" style="background:#eff6ff;border-color:#bfdbfe;color:#1e40af" id="rsNote" hidden><i class="fa-solid fa-arrows-rotate"></i> You did not accept the schedule BRB proposed. Please pick a new date and time below. Your appointment will go back to <b>Pending</b> until BRB approves it.</div>
+        <div class="card">
+          <h2 class="center" id="monthTitle" style="font-weight:normal;letter-spacing:.1em"></h2>
+          <p class="muted center mb" id="svcHint"></p>
+          <div class="legend"><span><i class="sw" style="background:#fff"></i>Available</span><span><i class="sw" style="background:#fee2e2;border-color:#fecaca"></i>Full / Taken</span><span><i class="sw" style="background:#e5e5e5"></i>Unavailable</span></div>
+          <div class="cal7"><div class="h">SUN</div><div class="h">MON</div><div class="h">TUE</div><div class="h">WED</div><div class="h">THU</div><div class="h">FRI</div><div class="h">SAT</div></div>
+          <div class="cal7" id="calendarGrid"></div>
+          <div class="row between" style="margin-top:28px"><button class="btn btn-outline" data-act="prev"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+            <button class="btn btn-outline" data-act="next">Next <i class="fa-solid fa-chevron-right"></i></button></div>
+        </div>
+        <div class="card" id="bookingTypeSection" hidden>
+          <h3 id="stepTitle" style="font-size:22px;font-weight:600;margin-bottom:12px"></h3><p class="muted mb" id="selectedDateDisplay"></p>
+          <div class="opts" id="typeOpts" hidden>
+            <div class="opt" id="soloOption" data-act="type-solo"><h4>Solo Session</h4><p class="muted small">Exclusive time — just you!</p><p class="small" id="soloStatus" style="margin-top:10px"></p></div>
+            <div class="opt" id="groupOption" data-act="type-group"><h4>Group Session</h4><p class="muted small">Bring friends or join others</p><p class="small" id="groupStatus" style="margin-top:10px"></p></div>
+          </div>
+          <div id="soloTimeSection" style="margin-top:24px" hidden>
+            <label for="soloTimeSelect">Select your time</label>
+            <p class="muted small" style="margin-bottom:8px" id="durNote"></p>
+            <select class="full" id="soloTimeSelect"><option value="">— Choose a time —</option></select>
+            <p class="small" style="color:#dc2626;margin-top:8px" id="soloTakenNote"></p>
+          </div>
+          <div class="note" id="groupTimeNote" style="margin-top:24px" hidden><i class="fa-solid fa-clock"></i> Group sessions are held at <b>9:00 AM or 3:00 PM</b>. BRB will set the time for your group.</div>
+          <button class="btn btn-black full" style="margin-top:24px" id="continueBtn" data-act="continue" disabled>Continue to Confirmation <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

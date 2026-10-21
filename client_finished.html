@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Submitted — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="finished">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item active" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="hero"><div class="card" style="padding:40px;max-width:560px">
+      <i class="fa-solid fa-circle-check" style="font-size:64px;color:#16a34a;margin-bottom:20px"></i>
+      <h1 id="fTitle" style="font-size:36px;letter-spacing:0">Appointment Submitted!</h1>
+      <p class="muted mb" id="fText" style="font-style:normal;font-size:18px"></p>
+      <div class="row" style="justify-content:center"><a class="btn btn-black" href="client_home.html">Back to Home</a><a class="btn btn-outline" href="client_services.html">Book Another Service</a></div>
+    </div></div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

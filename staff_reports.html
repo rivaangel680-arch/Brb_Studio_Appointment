@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reports">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by staff.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='staff_profile.html'">
+        <img id="sidePic" src="" alt="Staff Profile">
+        <div><b id="sideName">Staff</b><span>STAFF</span></div>
+      </div>
+      <a class="nav-item" href="staff_dashboard.html"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+      <a class="nav-item" href="staff_clients.html"><i class="fa-solid fa-users"></i><span>Client Management</span></a>
+      <a class="nav-item" href="staff_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="staff_appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointment & Booking</span></a>
+      <a class="nav-item" href="staff_attendance.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+      <a class="nav-item active" href="staff_reports.html"><i class="fa-solid fa-star"></i><span>Report</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <h1 class="center" style="margin-bottom:40px">Client Feedback & Reports</h1>
+    <div class="stack mid" id="list"></div>
+  </main>
+
+  <script src="staff.js"></script>
+</body>
+</html>

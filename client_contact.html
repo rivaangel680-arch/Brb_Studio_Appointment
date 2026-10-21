@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="contact">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item active" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <h1 class="center" style="margin-bottom:40px">Contact Us</h1>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr));max-width:1000px;margin:0 auto">
+      <div class="card"><h2 style="margin-bottom:24px">Get In Touch</h2><div class="stack">
+        <div class="row" style="align-items:flex-start;flex-wrap:nowrap"><i class="fa-solid fa-location-dot" style="font-size:24px;margin-top:4px"></i><div><b>Address</b><p class="muted">Marasigan St. Poblacion 4, Calaca City, Batangas, Philippines 4212</p></div></div>
+        <div class="row" style="align-items:flex-start;flex-wrap:nowrap"><i class="fa-solid fa-phone" style="font-size:24px;margin-top:4px"></i><div><b>Phone</b><p class="muted">09051738581</p></div></div>
+        <div class="row" style="align-items:flex-start;flex-wrap:nowrap"><i class="fa-solid fa-envelope" style="font-size:24px;margin-top:4px"></i><div><b>Email</b><p class="muted">inquiry.teambrb@gmail.com</p></div></div>
+        <div class="row" style="align-items:flex-start;flex-wrap:nowrap"><i class="fa-solid fa-clock" style="font-size:24px;margin-top:4px"></i><div><b>Business Hours</b><p class="muted">Monday — Saturday: 8:00 AM — 6:00 PM</p><p class="muted">Sunday: Closed</p></div></div></div></div>
+      <div class="card"><h2 style="margin-bottom:12px">Send Us a Message</h2>
+        <form id="contactForm"><label>Your Name</label><input class="full" name="name" required><label>Your Email</label><input class="full" type="email" name="email" required>
+          <label>Subject</label><input class="full" name="subject" placeholder="How can we help you?" required><label>Message</label><textarea class="full" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+          <button class="btn btn-black full" style="margin-top:20px;padding:12px">Send Message</button></form></div>
+    </div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

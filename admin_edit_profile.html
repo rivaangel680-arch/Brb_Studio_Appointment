@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Admin Profile — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="edit_profile">
+
+  <!-- ===== SIDEBAR (name, photo and unread badge are loaded from the database by app.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile active" onclick="location.href='admin_profile.html'">
+        <img id="adminPic" src="../uploads/profile_default.png" alt="Admin Profile">
+        <div><b id="adminName">Admin</b><span>ADMIN</span></div>
+      </div>
+      <a class="nav-item" href="admin_dashboard.html"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+      <a class="nav-item" href="admin_clients.html"><i class="fa-solid fa-users"></i><span>Client Management</span></a>
+      <a class="nav-item" href="admin_services.html"><i class="fa-solid fa-scissors"></i><span>Service Management</span></a>
+      <a class="nav-item" href="admin_charts.html"><i class="fa-solid fa-chart-simple"></i><span>Client Chart</span></a>
+      <a class="nav-item" href="admin_appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointment & Booking</span></a>
+      <a class="nav-item" href="admin_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="admin_records.html"><i class="fa-solid fa-folder-open"></i><span>Records & Audit</span></a>
+      <a class="nav-item" href="admin_attendance.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+      <a class="nav-item" href="admin_reports.html"><i class="fa-solid fa-star"></i><span>Report</span><span class="badge" id="unreadBadge" hidden></span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="narrow"><h1 class="center">Edit Admin Profile</h1>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+      <div class="card mb"><h2>Profile Picture</h2>
+        <form id="uploadForm"><div class="row mb"><img id="preview" src="../uploads/profile_default.png" style="width:112px;height:112px;border-radius:50%;object-fit:cover;border:2px solid #d1d5db" alt="">
+          <div style="flex:1"><input type="file" name="profile_pic" accept="image/*" class="full" style="font-size:15px" required>
+          <p class="muted small" style="margin-top:8px">JPG, PNG, GIF, WEBP or BMP. Max 10 MB.</p></div></div>
+          <button class="btn btn-black"><i class="fa-solid fa-upload"></i> Upload Picture</button></form></div>
+      <div class="card"><h2>Username & Password</h2>
+      <form id="credsForm"><label>Username</label><input class="full" name="username" required>
+        <label>New Password</label><input class="full" type="password" name="password" placeholder="Leave blank to keep current password">
+        <label>Confirm New Password</label><input class="full" type="password" name="password2" placeholder="Re-enter new password">
+        <div class="row" style="margin-top:18px"><a class="btn btn-outline" href="admin_profile.html">Cancel</a><button class="btn btn-black"><i class="fa-solid fa-save"></i> Save Changes</button></div></form>
+      </div></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

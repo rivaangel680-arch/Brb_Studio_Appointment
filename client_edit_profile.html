@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="edit_profile">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile active" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <h1 class="center" style="margin-bottom:40px">Edit Your Profile</h1>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+    <form id="profileForm" class="stack" style="max-width:672px;margin:0 auto">
+      <div class="card"><h2>Profile Picture</h2><div class="row"><img id="preview" alt="" style="width:112px;height:112px;border-radius:50%;object-fit:cover;border:2px solid #d1d5db">
+        <div style="flex:1"><input type="file" name="profile_pic" accept="image/*" class="full" style="font-size:15px"><p class="muted small" style="margin-top:8px">Upload a new profile picture (JPG, PNG, GIF or WEBP, max 10 MB)</p></div></div></div>
+      <div class="card"><h2>Personal Information</h2><div class="formgrid" style="align-items:start">
+        <div><label>First Name</label><input class="full" name="first_name"></div><div><label>Last Name</label><input class="full" name="last_name"></div>
+        <div><label>Username</label><input class="full" name="username" required></div><div><label>Birthday</label><input class="full" type="date" name="birthday"></div>
+        <div><label>Age</label><input class="full" type="number" min="0" max="120" name="age"></div>
+        <div><label>Gender</label><select class="full" name="gender"><option value="">Select Gender</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        <div><label>Contact Number</label><input class="full" name="contact_number" maxlength="20"></div></div>
+        <label style="margin-top:12px">Address</label><textarea class="full" name="address" rows="3"></textarea></div>
+      <div class="card"><h2>Change Password</h2><p class="muted small mb">Leave blank if you do not want to change your password.</p><div class="formgrid" style="align-items:start">
+        <div><label>New Password</label><input class="full" type="password" name="new_password" placeholder="At least 8 characters"></div>
+        <div><label>Confirm New Password</label><input class="full" type="password" name="confirm_password" placeholder="Re-enter new password"></div></div></div>
+      <div class="row" style="justify-content:center;padding-top:8px"><a class="btn btn-outline" style="padding:12px 32px" href="client_profile.html">Cancel</a>
+        <button class="btn btn-black" style="padding:12px 40px;font-weight:bold">Save Changes</button></div>
+    </form>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

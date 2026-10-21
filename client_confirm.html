@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Appointment — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="confirm">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item active" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <h1 class="center" id="confTitle">Confirm Your Appointment</h1>
+    <div class="narrow stack" style="max-width:672px">
+      <div class="card err" id="errBox" hidden></div>
+      <div class="card"><h2>Selected Service</h2><p style="font-size:22px;font-weight:600" id="cSvc"></p><p class="muted mb" id="cDesc"></p><p style="font-size:24px;font-weight:bold" id="cPrice"></p></div>
+      <div class="card"><h2>Appointment Date</h2><p style="font-size:22px;font-weight:600" id="cDate"></p><div id="cExtra" style="line-height:1.9"></div></div>
+      <div class="card"><h2>Your Information</h2><div class="kv" id="cInfo"></div>
+        <p class="muted small" style="margin-top:20px"><a style="text-decoration:underline" href="client_edit_profile.html">Edit your profile</a> if any information needs updating.</p></div>
+      <div class="row" style="justify-content:center;padding-top:12px">
+        <a class="btn btn-outline" id="cBack" href="client_services.html">Back to Calendar</a>
+        <button class="btn btn-black" style="padding:12px 40px;font-weight:bold" id="cSubmit" data-act="submit">Submit Appointment</button></div>
+    </div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Management — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="services">
+
+  <!-- ===== SIDEBAR (name, photo and unread badge are loaded from the database by app.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='admin_profile.html'">
+        <img id="adminPic" src="../uploads/profile_default.png" alt="Admin Profile">
+        <div><b id="adminName">Admin</b><span>ADMIN</span></div>
+      </div>
+      <a class="nav-item" href="admin_dashboard.html"><i class="fa-solid fa-gauge"></i><span>Dashboard</span></a>
+      <a class="nav-item" href="admin_clients.html"><i class="fa-solid fa-users"></i><span>Client Management</span></a>
+      <a class="nav-item active" href="admin_services.html"><i class="fa-solid fa-scissors"></i><span>Service Management</span></a>
+      <a class="nav-item" href="admin_charts.html"><i class="fa-solid fa-chart-simple"></i><span>Client Chart</span></a>
+      <a class="nav-item" href="admin_appointments.html"><i class="fa-solid fa-calendar-check"></i><span>Appointment & Booking</span></a>
+      <a class="nav-item" href="admin_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="admin_records.html"><i class="fa-solid fa-folder-open"></i><span>Records & Audit</span></a>
+      <a class="nav-item" href="admin_attendance.html"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></a>
+      <a class="nav-item" href="admin_reports.html"><i class="fa-solid fa-star"></i><span>Report</span><span class="badge" id="unreadBadge" hidden></span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="row between mb">
+      <h1 style="margin:0">Service Management</h1>
+      <button class="btn btn-black" id="newSvcBtn" data-act="new-service"><i class="fa-solid fa-plus"></i> Create Service</button>
+    </div>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+
+    <!-- Services are shown as cards -->
+    <div id="list"></div>
+
+    <!-- Small box that pops up on the right side (hidden until "Create Service" or Edit is clicked) -->
+    <div class="drawer-overlay" id="svcOverlay" data-act="cancel-edit" hidden></div>
+    <form class="drawer" id="svcForm" hidden>
+      <div class="row between" style="margin-bottom:8px"><h2 id="svcFormTitle" style="margin:0">Create service</h2>
+        <button type="button" class="btn-x" data-act="cancel-edit" aria-label="Close"><i class="fa-solid fa-xmark"></i></button></div>
+      <input type="hidden" name="id">
+      <label>Name</label><input class="full" name="name" required>
+      <div class="grid2">
+        <div><label>Price (₱)</label><input class="full" name="price" type="number" min="0" step="0.01" required></div>
+        <div><label>Duration (min)</label><input class="full" name="duration_minutes" type="number" min="1" required></div>
+      </div>
+      <div class="grid2">
+        <div><label>Category</label><select class="full" name="category"><option>Solo</option><option>Package</option></select></div>
+        <div><label>Status</label><select class="full" name="status"><option>Active</option><option>Inactive</option></select></div>
+      </div>
+      <label>Description (optional)</label><textarea class="full" name="description" rows="3"></textarea>
+      <label>Photo (optional)</label>
+      <img id="svcPreview" class="svc-preview" alt="Photo preview" hidden>
+      <input type="file" name="image" accept="image/*" class="full" style="font-size:15px">
+      <p class="muted small" style="margin-top:6px">JPG, PNG, GIF or WEBP, max 10 MB. When editing, leave empty to keep the current photo.</p>
+      <div class="row" style="margin-top:20px"><button class="btn btn-black"><i class="fa-solid fa-floppy-disk"></i> Save service</button>
+        <button type="button" class="btn btn-outline" data-act="cancel-edit">Cancel</button></div>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

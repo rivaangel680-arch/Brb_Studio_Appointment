@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback — BRB Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="report">
+
+  <!-- ===== SIDEBAR (name and photo are loaded from the database by client.js) ===== -->
+  <aside class="sidebar">
+    <div>
+      <div class="profile" onclick="location.href='client_profile.html'">
+        <img id="sidePic" src="" alt="Profile">
+        <div><b id="sideName">Client</b><span>CLIENT</span></div>
+      </div>
+      <a class="nav-item" href="client_home.html"><i class="fa-solid fa-home"></i><span>Home</span></a>
+      <a class="nav-item" href="client_services.html"><i class="fa-solid fa-scissors"></i><span>Services</span></a>
+      <a class="nav-item" href="client_schedule.html"><i class="fa-solid fa-calendar-check"></i><span>Schedule</span></a>
+      <a class="nav-item" href="client_calendar.html"><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a>
+      <a class="nav-item" href="client_contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+      <a class="nav-item active" href="client_report.html"><i class="fa-solid fa-star"></i><span>Feedback</span></a>
+      <a class="nav-item" href="client_support.html"><i class="fa-solid fa-circle-question"></i><span>Support</span></a>
+      <a class="nav-item" href="../logout.php" style="margin-top:16px;color:#d1d5db"><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a>
+    </div>
+    <div class="brand"><big>BRB</big><small>STUDIOS</small></div>
+  </aside>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <main>
+    <div class="narrow"><h1 class="center" style="margin-bottom:40px">Share Your Feedback</h1>
+    <div class="card ok mb center" id="flash" hidden></div>
+    <div class="card err mb" id="errBox" hidden></div>
+      <div class="card"><form id="feedbackForm"><div class="center mb"><p class="mb">How would you rate your experience with us?</p>
+        <div class="row" style="justify-content:center;gap:8px" id="starRating"><span class="star" data-value="1"><i class="fa-solid fa-star"></i></span><span class="star" data-value="2"><i class="fa-solid fa-star"></i></span><span class="star" data-value="3"><i class="fa-solid fa-star"></i></span><span class="star" data-value="4"><i class="fa-solid fa-star"></i></span><span class="star" data-value="5"><i class="fa-solid fa-star"></i></span></div></div>
+        <label>Your Feedback</label><textarea class="full" name="comment" rows="6" placeholder="Tell us what you think... What did we do well, and where can we improve? We value every word you share!" required></textarea>
+        <button class="btn btn-black full" style="margin-top:20px;padding:12px;font-weight:bold">Submit Feedback</button></form></div></div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>
